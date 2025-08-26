@@ -22,6 +22,7 @@ runs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ inputs.python-version }}
+      shell: bash
 
     - name: Install dependencies
       run: |
