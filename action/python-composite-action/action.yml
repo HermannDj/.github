@@ -1,5 +1,5 @@
 name: "Install Python Dependencies and Run Tests"
-description: "Installe les dependances Python et execute les tests"
+description: "Installe les dépendances Python et exécute les tests"
 author: "Hermann DJOKO"
 
 inputs:
@@ -7,7 +7,7 @@ inputs:
     description: "Version de Python à installer"
     required: true
   run-tests:
-    description: "Execute des tests ou non"
+    description: "Exécuter les tests ou non"
     required: false
     default: "true"
 
@@ -35,5 +35,6 @@ runs:
 
     - name: Set output for test status
       if: ${{ inputs.run-tests == 'true' }}
-      run: echo "::set-output name=test-status::success"
+      run: |
+        echo "test-status=success" >> $GITHUB_OUTPUT
       shell: bash
