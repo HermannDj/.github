@@ -11,16 +11,3 @@ inputs:
     required: false
     default: "true"
 
-outputs:
-  test-status:
-    description: "Le statut de l'exécution des tests"
-
-runs:
-  using: "composite"
-  steps:
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ inputs.python-version }}
-
-
