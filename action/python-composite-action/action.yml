@@ -24,7 +24,3 @@ runs:
         python-version: ${{ inputs.python-version }}
 
 
-    - name: Set output for test status
-      if: ${{ inputs.run-tests == 'true' }}
-      run: echo "::set-output name=test-status::success
-      shell: bash
