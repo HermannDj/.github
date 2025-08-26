@@ -24,18 +24,15 @@ runs:
         python-version: ${{ inputs.python-version }}
 
     - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      run: pip install -r requirements.txt
       shell: bash
 
     - name: Run tests
       if: ${{ inputs.run-tests == 'true' }}
-      run: |
-        python test_script.py
+      run: python test_script.py
       shell: bash
 
     - name: Set output for test status
       if: ${{ inputs.run-tests == 'true' }}
-      run: |
-        echo "::set-output name=test-status::success
+      run: echo "::set-output name=test-status::success
       shell: bash
